@@ -23,7 +23,14 @@ def update(frame_number, rolls, faces, frequencies):
 
     # display frequency & percentage above each patch (bar)
     for bar, frequency in zip(axes.patches, frequencies):
-        text_x = bar.get_x() + bar.get_with() * 0.5
+        text_x = bar.get_x() + bar.get_width() * 0.5
         text_y = bar.get_height()
         text=f'{frequency:,}\n{frequency / sum(frequencies):.3%}'
         axes.text(text_x, text_y, text, ha='center', va='bottom')
+    
+    plt.show()
+
+
+faces = [1, 2, 3, 4, 5, 6]
+frequencies = [0, 0, 0, 0, 0, 0]
+update(1, 600, faces, frequencies)
