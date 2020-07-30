@@ -40,7 +40,7 @@ frequencies = [0] * 6 #six-element list of die frequencies initialized at 0
 
 random.seed(45)
 # configure and start animation that calls function update as a callback
-die_animation = animation.FuncAnimation(figure, update, repeat=False, frames=number_of_frames, 
+die_animation = animation.FuncAnimation(figure, update, repeat=False, frames=number_of_frames -1, 
 interval=33, fargs=(rolls_per_frame, values, frequencies))
 
 plt.show() # display bar_plot window
